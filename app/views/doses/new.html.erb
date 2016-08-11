@@ -1,15 +1,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+<div class="text-center padded">
 
+<h1>Edit Doses & Ingredients</h1><br><br>
 
-<h1>Edit Doses & Ingredients</h1>
-
-<%= form_for(@cocktail) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<%= form_for [@cocktail, @dose] do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+  <%= f.label :ingredient_id %>
+  <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %><br><br>
   <%= f.submit %>
 <% end %>
 
+<br><br>
 
-<%= link_to "Back to Your Cocktail", "/cocktails/#{cocktail.id}", :class => "btn btn-success" %>
+<%= link_to "Back to Your Cocktail", "/cocktails", :class => "btn btn-success" %>
+</div>
