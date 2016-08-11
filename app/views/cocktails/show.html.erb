@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<%= link_to "Back to Cocktail Index", "/cocktails", :class => "btn btn-success" %>
+
+
+<div class="text-center padded">
+
+  <h1>Cocktail Bazar</h1>
+  <h2>-Hall of fame of cocktail recipies-</h2><br><br>
+
+  <div class="row">
+    <div class=" col-sm-4"></div>
+    <div class="col-sm-4 text-center">
+      <br><div class="card">
+      <h2><%= @cocktail.name %></h2>
+      <%= link_to "Edit", "/cocktails/#{@cocktail.id}/doses/new", :class => "btn btn-warning" %>
+      <%= link_to "Delete", "/cocktails/#{@cocktail.id}", method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger" %>
+
+      <h3>Ingredients & Doses</h3>
+      <div class="row">
+        <div class=" col-sm-4"></div>
+        <div class="col-sm-4 text-center">
+          <% @cocktail.doses.each do |dose| %>
+          <br><div class="card">
+          <%= dose.description %><br>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<br><br><br>
+<div id="footer">
+ <div class="container">
+        <div class="row">
+          <div class="col-xs-4">
+            <ul class="list-inline">
+              <li><%= link_to "", "", class:"fa fa-youtube" %></li>
+              <li><%= link_to "", "", class:"fa fa-instagram" %></li>
+              <li><%= link_to "", "", class:"fa fa-facebook" %></li>
+              <li><%= link_to "", "", class:"fa fa-twitter" %></li>
+            </ul>
+          </div>
+          <div class="col-xs-8 text-right">
+            <p>This is a FoodAdvisor challenge @ LeWagon</p>
+          </div>
+        </div>
+      </div>
+</div>
+
+
