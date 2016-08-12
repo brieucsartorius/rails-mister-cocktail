@@ -8,14 +8,16 @@
 Cocktail.destroy_all
 cocktails_attributes = [
   {
-    name:         "Cuba Loco"
+    name:         "Cuba Loco",
+    photo:    "cubalibre.jpg"
   },
   {
-    name:         "White Russian"
-
+    name:         "White Russian",
+    photo:    "whiterussian.jpg"
   },
   {
-    name:         "Green Lantern"
+    name:         "Green Lantern",
+    photo:      "greenlantern.jpg"
   }
 ]
 cocktails_attributes.each { |params| Cocktail.create!(params) }

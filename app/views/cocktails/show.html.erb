@@ -10,10 +10,11 @@
   <h2>-Hall of fame of cocktail recipies-</h2><br><br>
 
   <div class="row">
-    <div class=" col-sm-4"></div>
-    <div class="col-sm-4 text-center">
+    <div class=" col-sm-3"></div>
+    <div class="col-sm-6 text-center">
       <br><div class="card">
       <h2><%= @cocktail.name %></h2>
+      <%= cl_image_tag @cocktail.photo, width: 600, height: 300, crop: :fill %><br>
       <%= link_to "Edit", "/cocktails/#{@cocktail.id}/doses/new", :class => "btn btn-warning" %>
       <%= link_to "Delete", "/cocktails/#{@cocktail.id}", method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger" %>
 
