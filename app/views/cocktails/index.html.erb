@@ -5,8 +5,8 @@
 
 <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://hd.unsplash.com/photo-1468072114808-903e572b8ead');">
        <div class="title">
-         <h1>Cocktail Bazar</h1>
-         <h2>-Hall of fame of cocktail recipies-</h2>
+         <h1>COCKTAIL BAZAR</h1>
+         <h2>-- HALL OF FAME FOR COCKTAIL RECIPIES --</h2>
          <br>
          <%= link_to "New Cocktail", "/cocktails/new", :class => "btn btn-success" %>
      </div>
@@ -14,8 +14,8 @@
 
 
 <div class="text-center padded">
-<h1>//Cocktail Bazar\\</h1>
-
+<h1>//Welcome to the Cocktail Bazar\\</h1>
+<h2> -- OUR FAVORITES -- </h2>
 <div class="row">
   <div class=" col-sm-4"></div>
     <div class="col-sm-4 text-center">
@@ -23,7 +23,7 @@
     <br><div class="card">
     <%= cl_image_tag cocktail.photo, width: 400, height: 300, crop: :fill %>
   <h2><%= cocktail.name %></h2>
-  <%= link_to "FInd more about this cocktail", "/cocktails/#{cocktail.id}", :class => "btn btn-success" %>
+  <%= link_to "Find more about this cocktail", "/cocktails/#{cocktail.id}", :class => "btn btn-success" %>
   </div>
 <% end %>
 </div>

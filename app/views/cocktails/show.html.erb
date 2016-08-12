@@ -5,8 +5,7 @@
 
 <div class="text-center padded">
 
-  <h1>Cocktail Bazar</h1>
-  <h2>-Hall of fame of cocktail recipies-</h2><br><br>
+  <h1>// COCKTAIL BAZAR \\</h1><br><br>
 
   <div class="row">
     <div class=" col-sm-3"></div>
@@ -14,10 +13,8 @@
       <br><div class="card">
       <h2><%= @cocktail.name %></h2>
       <%= cl_image_tag @cocktail.photo, width: 600, height: 300, crop: :fill %><br><br>
-      <%= link_to "Edit the Recipe", "/cocktails/#{@cocktail.id}/doses/new", :class => "btn btn-warning" %>
-      <%= link_to "Delete this Cocktail", "/cocktails/#{@cocktail.id}", method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger" %>
 
-      <h3>Ingredients & Doses</h3>
+      <h3>-- INGREDIENTS & DOSES --</h3>
       <div class="row">
         <div class=" col-sm-4"></div>
         <div class="col-sm-4 text-center">
@@ -27,7 +24,28 @@
           <%end%>
           </ul>
       </div>
+        <br> <%= link_to "Edit the Recipe", "/cocktails/#{@cocktail.id}/doses/new", :class => "btn btn-warning"%>
+      <%= link_to "Delete this Cocktail", "/cocktails/#{@cocktail.id}", method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger" %>
     </div>
   </div><br><br>
 </div>
+</div>
+
+<div class="text-center padded">
+<h3>--- REVIEWS ABOUT THIS COCKTAIL ---</h3>
+  <div class="row">
+  <div class=" col-sm-4"></div>
+    <div class="col-sm-4 text-center">
+      <% @cocktail.reviews.each do |review| %>
+      <br><div class="card">
+      <%= review.content %><br>
+      <%=" Rating : "%><%= review.rating %><br>
+    </div>
+    <%end%>
+  </div>
+</div>
+</div>
+
+<hr>
+<%= link_to "Add a Review", "/cocktails/#{@cocktail.id}/reviews/new", :class => "btn btn-success" %>
 </div>
