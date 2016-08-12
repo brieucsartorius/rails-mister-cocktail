@@ -8,16 +8,16 @@
 Cocktail.destroy_all
 cocktails_attributes = [
   {
-    name:         "Cuba Loco",
-    photo:    "cubalibre.jpg"
+    name:        "Cuba Loco",
+    remote_photo_url: "http://l-anecdote.com/wp-content/uploads/2015/01/cocktail-cuba-libre-810x543.jpg"
   },
   {
     name:         "White Russian",
-    photo:    "whiterussian.jpg"
+    remote_photo_url:    "http://liquor.s3.amazonaws.com/wp-content/uploads/2011/09/02120028/white-russian-720x720-recipe.jpg"
   },
   {
     name:         "Green Lantern",
-    photo:      "greenlantern.jpg"
+    remote_photo_url:      "https://s3.amazonaws.com/liquor/wp-content/uploads/2016/01/14213724/Medicinal-cocktails-Green-Juice-green-juice-margarita-720x480-inline.jpg"
   }
 ]
 cocktails_attributes.each { |params| Cocktail.create!(params) }
